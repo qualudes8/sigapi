@@ -1,0 +1,42 @@
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+SETUP.txt
+FEATURES.txt
+ARCHITECTURE.txt
+
+# Environment files
+.env
+.env.example
+
+# Node modules (will be installed in container)
+node_modules
+
+# Logs
+logs/
+*.log
+
+# Signal data
+signal-data/
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.yml
+Dockerfile
+
+# Examples and tests
+examples/
+tests/
+

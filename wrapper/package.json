@@ -1,0 +1,38 @@
+{
+  "name": "sigapi",
+  "version": "1.0.0",
+  "description": "SigAPI - Simple Signal messaging API with rate limiting and logging",
+  "main": "src/index.js",
+  "author": "Qualudes",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qualudes8/sigapi.git"
+  },
+  "keywords": [
+    "signal",
+    "messaging",
+    "api",
+    "rest",
+    "wrapper",
+    "signal-cli",
+    "docker",
+    "automation"
+  ],
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "express": "^4.18.2",
+    "form-data": "^4.0.0",
+    "multer": "^1.4.5-lts.1",
+    "p-queue": "^7.4.1",
+    "winston": "^3.11.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
+
