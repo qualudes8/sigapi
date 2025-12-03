@@ -13,7 +13,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # Log files
-wrapper/logs/*.log
+api/logs/*.log
 *.log
 
 # IDE

@@ -13,7 +13,7 @@ services:
 
   # SigAPI - Your Signal messaging API
   sigapi:
-    build: ./wrapper
+    build: ./api
     container_name: sigapi
     environment:
       - NODE_ENV=production
@@ -24,7 +24,7 @@ services:
     ports:
       - "127.0.0.1:3000:3000"    # SigAPI - localhost only
     volumes:
-      - ./wrapper/logs:/app/logs
+      - ./api/logs:/app/logs
     depends_on:
       - signal-api
     restart: unless-stopped

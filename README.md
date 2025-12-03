@@ -168,9 +168,9 @@ docker-compose restart sigapi
 
 ## Documentation
 
-- **[SETUP.txt](SETUP.txt)** - Detailed setup and usage guide
-- **[FEATURES.txt](FEATURES.txt)** - Complete feature documentation
-- **[ARCHITECTURE.txt](ARCHITECTURE.txt)** - Technical architecture overview
+- **[Setup Guide](docs/SETUP.md)** - Detailed setup and usage guide
+- **[Features](docs/FEATURES.md)** - Complete feature documentation
+- **[Architecture](docs/ARCHITECTURE.md)** - Technical architecture overview
 
 ## Docker Commands
 
@@ -195,25 +195,30 @@ docker-compose ps
 
 ```
 sigapi/
-├── docker-compose.yml      # Docker configuration
-├── .env                     # Your configuration
-├── .env.example            # Configuration template
-├── LICENSE                 # MIT License
-├── README.md               # This file
-├── SETUP.txt               # Detailed setup guide
-├── FEATURES.txt            # Feature documentation
-├── ARCHITECTURE.txt        # Architecture overview
+├── .github/                # GitHub configuration
+├── api/                    # Main application
+│   ├── Dockerfile         # Container build file
+│   ├── package.json       # Node.js dependencies
+│   ├── logs/              # Log files
+│   └── src/
+│       ├── index.js       # Main server
+│       ├── config.js      # Configuration
+│       ├── routes/        # API endpoints
+│       ├── services/      # Signal API client
+│       └── utils/         # Logging & rate limiting
+├── docs/                   # Documentation
+│   ├── ARCHITECTURE.md    # Technical overview
+│   ├── FEATURES.md        # Feature documentation
+│   └── SETUP.md           # Setup guide
+├── examples/               # Example scripts
 ├── signal-data/            # Signal account data (auto-created)
-└── wrapper/
-    ├── Dockerfile          # Container build file
-    ├── package.json        # Node.js dependencies
-    ├── logs/               # Log files
-    └── src/
-        ├── index.js        # Main server
-        ├── config.js       # Configuration
-        ├── routes/         # API endpoints
-        ├── services/       # Signal API client
-        └── utils/          # Logging & rate limiting
+├── .dockerignore          # Docker ignore rules
+├── .env                    # Your configuration
+├── .env.example           # Configuration template
+├── .gitignore             # Git ignore rules
+├── docker-compose.yml     # Docker configuration
+├── LICENSE                # MIT License
+└── README.md              # This file
 ```
 
 ## Security
@@ -230,7 +235,7 @@ sigapi/
 
 ## Logs
 
-Logs are stored in `wrapper/logs/`:
+Logs are stored in `api/logs/`:
 
 - `combined.log` - All activity
 - `error.log` - Errors only
@@ -242,7 +247,7 @@ View logs:
 docker-compose logs -f sigapi
 
 # Or check log files
-tail -f wrapper/logs/messages.log
+tail -f api/logs/messages.log
 ```
 
 ## Troubleshooting
@@ -263,7 +268,7 @@ tail -f wrapper/logs/messages.log
 - Increase `RATE_LIMIT_DELAY_MS` in `.env` (try 2000 or 3000)
 - Restart: `docker-compose restart sigapi`
 
-See [SETUP.txt](SETUP.txt) for more troubleshooting tips.
+See [Setup Guide](docs/SETUP.md) for more troubleshooting tips.
 
 ## Use Cases
 
